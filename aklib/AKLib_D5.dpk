@@ -1,0 +1,43 @@
+package AKLib;
+
+{$R *.res}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'AKLib'}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl50,
+  vclx50,
+{  dsnap50,}
+//  dbrtl50,
+  vcldb50,
+  vclib50,
+  VclSmp50;
+
+contains
+  AKLabel in 'AKLabel.pas',
+  AKUser in 'AKUser.pas',
+  AKUserAdm in 'AKUserAdm.pas',
+  AKPrint in 'AKPrint.pas',
+  AKExpression in 'AKExpression.pas';
+
+end.

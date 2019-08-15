@@ -1,0 +1,7 @@
+nTotal := 0 
+f:first 
+do while !f:eof 
+  nTotal := nTotal+f:salario
+  f:next 
+enddo 
+return nTotal

@@ -1,0 +1,161 @@
+object Calculador: TCalculador
+  Left = 105
+  Top = 82
+  Width = 760
+  Height = 474
+  VertScrollBar.Range = 41
+  ActiveControl = PageControl1
+  Caption = 'ClipperExpression Demo - CLX'
+  Color = clButton
+  Font.CharSet = fcsLatin1
+  Font.Color = clBlack
+  Font.Height = 13
+  Font.Name = 'Courier New'
+  Font.Pitch = fpVariable
+  Font.Style = []
+  Font.Weight = 40
+  KeyPreview = True
+  ParentFont = False
+  Position = poScreenCenter
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 16
+  TextWidth = 8
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 0
+    Width = 760
+    Height = 433
+    ActivePage = TabSuporte
+    Align = alClient
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'Calculo'
+      object Memo1: TMemo
+        Left = 0
+        Top = 0
+        Width = 452
+        Height = 403
+        Align = alClient
+        TabOrder = 0
+      end
+      object LogList: TListBox
+        Left = 452
+        Top = 0
+        Width = 300
+        Height = 403
+        Hint = 'Log'
+        TabStop = False
+        Align = alRight
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+      end
+    end
+    object TabSuporte: TTabSheet
+      Caption = 'DataSet e Functions'
+      ImageIndex = 1
+      object FuncList: TMemo
+        Left = 452
+        Top = 0
+        Width = 300
+        Height = 403
+        Hint = 'Funcoes e variaveis definidas pelo usuario'
+        Align = alRight
+        Lines.Strings = (
+          'sqr(x)=x*x'
+          'sqrt(x)=x^(1/2)'
+          'n=3'
+          's=f:salario')
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+      end
+      object dbDataSet: TDBGrid
+        Left = 0
+        Top = 0
+        Width = 452
+        Height = 403
+        Align = alClient
+        DataSource = DataSource1
+        TabOrder = 1
+        TitleFont.CharSet = fcsLatin1
+        TitleFont.Color = clBlack
+        TitleFont.Height = 13
+        TitleFont.Name = 'Courier New'
+        TitleFont.Pitch = fpVariable
+        TitleFont.Style = []
+        TitleFont.Weight = 40
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 433
+    Width = 760
+    Height = 41
+    Align = alBottom
+    TabOrder = 1
+    object Button1: TButton
+      Left = 14
+      Top = 7
+      Width = 179
+      Height = 26
+      Caption = '&Calculate'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 200
+      Top = 7
+      Width = 193
+      Height = 26
+      Caption = '&Calculate all'
+      TabOrder = 1
+      OnClick = Button1Click
+    end
+    object Button3: TButton
+      Left = 400
+      Top = 7
+      Width = 193
+      Height = 26
+      Caption = 'Load File Text'
+      TabOrder = 2
+      OnClick = Button3Click
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ClientDataSet1
+    Left = 448
+    Top = 376
+  end
+  object ClientDataSet1: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 352
+    Top = 368
+    object ClientDataSet1CODIGO: TIntegerField
+      FieldName = 'CODIGO'
+    end
+    object ClientDataSet1SALARIO: TCurrencyField
+      FieldName = 'SALARIO'
+    end
+    object ClientDataSet1NOME: TStringField
+      FieldName = 'NOME'
+      Size = 30
+    end
+  end
+  object OpenCode: TOpenDialog
+    FilterIndex = 0
+    Height = 0
+    Title = 'Open'
+    Width = 0
+    Left = 632
+    Top = 368
+  end
+end

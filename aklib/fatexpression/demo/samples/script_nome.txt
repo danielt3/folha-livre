@@ -1,0 +1,11 @@
+sNome := ""
+f:first
+do while !f:eof
+  if sNome = ""
+    sNome := f:nome
+  else
+    sNome := sNome+"_"+f:nome
+  endif
+  f:next
+enddo
+return sNome

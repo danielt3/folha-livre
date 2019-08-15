@@ -1,0 +1,6 @@
+sqr(x)=x*x
+sqrt(x)=x^(1/2)
+n=9
+s=f:salario
+rad(x)=x/180
+f(x)=sin(rad(x))
